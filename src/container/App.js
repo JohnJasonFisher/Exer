@@ -27,6 +27,7 @@ class App extends Component {
 			<div className="App">
 				<NewWorkout
 					buttonMsg={buttonMsgText}
+					NewWorkout={this.state.NewWorkout}
 					click={this.startWorkoutHandler}
 				/>
 			</div>
