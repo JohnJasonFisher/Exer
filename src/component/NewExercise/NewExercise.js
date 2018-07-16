@@ -1,5 +1,6 @@
 import React from 'react'
 import './NewExercise.css'
+import {Button, Glyphicon} from 'react-bootstrap';
 
 const NewExercise = props => {
 	return (
@@ -23,7 +24,14 @@ const NewExercise = props => {
 				Weight:
 				<input placeholder='optional'/>
 			</label>
-			<button type="submit">Submit!</button>
+
+			<div>
+				<button className='submitBtn' type="submit">Submit!</button>
+
+				<Button bsSize="small">
+					<Glyphicon glyph="plus"/>
+				</Button>
+			</div>
 		</form>
 	)
 }
