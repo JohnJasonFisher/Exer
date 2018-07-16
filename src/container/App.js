@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './App.css'
 import NewWorkout from '../component/NewWorkout/NewWorkout'
+import NewExercise from '../component/NewExercise/NewExercise.js'
 
 class App extends Component {
 
@@ -23,6 +24,11 @@ class App extends Component {
 			buttonMsgText = 'Finish a new Workout'
 		}
 
+		let ShowNewExercise = null
+		if (this.state.NewWorkout === true) {
+			ShowNewExercise = <NewExercise/>
+		}
+
 		return (
 			<div className="App">
 				<NewWorkout
@@ -30,6 +36,7 @@ class App extends Component {
 					NewWorkout={this.state.NewWorkout}
 					click={this.startWorkoutHandler}
 				/>
+				{ShowNewExercise}
 			</div>
 		)
 	}
