@@ -25,7 +25,7 @@ const NewExercise = props => {
 				<input placeholder='optional'/>
 			</label>
 
-			<div>
+			<div className='btnGroup'>
 				<button className='submitBtn' type="submit">Submit!</button>
 
 				<Button bsSize="small">
