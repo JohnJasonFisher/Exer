@@ -19,9 +19,18 @@ class NewExercise extends Component {
 		this.setState(newState)
 	}
 
+	clearState() {
+		this.setState({
+			name: '',
+			reps: '',
+			sets: '',
+			weight: ''
+		})
+	}
+
 	render () {
 		return (
-			<form className='NewExercise' onSubmit={event => this.props.submit(event, this.state)}>
+			<form className='NewExercise' onSubmit={event => {this.props.submit(event, this.state); this.clearState()}} >
 				<label>
 					Exercise Name:
 					<input placeholder='push ups' value={this.state.name} onChange={event => this.inputOnChangeHandler(event, 'name')}/>
