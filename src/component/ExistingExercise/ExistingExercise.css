@@ -1,0 +1,9 @@
+.ExistingExercise p {
+	display: inline;
+	font-size: 24px;
+	padding: 20px;
+	margin: 20px;
+}
+.ExistingExercise span {
+	font-size: 24px;
+}

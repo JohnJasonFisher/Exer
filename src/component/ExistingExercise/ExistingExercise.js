@@ -1,29 +1,21 @@
 import React from 'react'
 import './ExistingExercise.css'
+import {ListGroupItem} from 'react-bootstrap'
 
+const classNames = [, 'list-group-item']
 const ExistingExercise = props => {
 	return (
-		<form className='ExistingExercise'>
-			<label>
-				Exercise Name:
-				<input placeholder='push ups' value={props.name} readonly/>
-			</label>
+		<div className='ExistingExercise'>
+			<ListGroupItem>
+				<p>Exercise Name: <span className="badge">{props.name}</span></p>
 
-			<label>
-				Sets:
-				<input readonly value={props.sets}/>
-			</label>
+				<p>Sets: <span className="badge">{props.sets}</span></p>
 
-			<label>
-				Reps:
-				<input readonly value={props.reps}/>
-			</label>
+				<p>Reps: <span className="badge">{props.reps}</span></p>
 
-			<label>
-				Weight:
-				<input placeholder='optional' value={props.weight} readonly/>
-			</label>
-		</form>
+				<p>Weight: <span className="badge">{props.weight}</span></p>
+			</ListGroupItem>
+		</div>
 	)
 }
 
