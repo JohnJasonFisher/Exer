@@ -3,27 +3,15 @@ import './ExistingExercise.css'
 
 const ExistingExercise = props => {
 	return (
-		<form className='ExistingExercise'>
-			<label>
-				Exercise Name:
-				<input placeholder='push ups' value={props.name} readonly/>
-			</label>
+		<div className='ExistingExercise'>
+			<li>Exercise Name: {props.name}</li>
 
-			<label>
-				Sets:
-				<input readonly value={props.sets}/>
-			</label>
+			<li>Sets: {props.sets}</li>
 
-			<label>
-				Reps:
-				<input readonly value={props.reps}/>
-			</label>
+			<li>Reps: {props.reps}</li>
 
-			<label>
-				Weight:
-				<input placeholder='optional' value={props.weight} readonly/>
-			</label>
-		</form>
+			<li>Weight: {props.weight}</li>
+		</div>
 	)
 }
 

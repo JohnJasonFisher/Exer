@@ -35,7 +35,7 @@ class App extends Component {
 
 		let ShowExistingExercises = null
 		if (this.state.exercises.length > 0) {
-			ShowExistingExercises = this.state.exercises.map(ex => <ExistingExercise name={ex.name} sets={ex.sets} reps={ex.reps} weight={ex.weight}/>)
+			ShowExistingExercises = this.state.exercises.map((ex, index) => <ExistingExercise key={'ee' + index} name={ex.name} sets={ex.sets} reps={ex.reps} weight={ex.weight}/>)
 		}
 
 		return (
@@ -44,7 +44,9 @@ class App extends Component {
 					newWorkout={this.state.newWorkout}
 					click={this.startWorkoutHandler}
 				/>
-				{ShowExistingExercises}
+				<ul>
+					{ShowExistingExercises}
+				</ul>
 				{ShowNewExercise}
 			</div>
 		)
