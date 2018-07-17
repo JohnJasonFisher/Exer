@@ -1,16 +1,20 @@
 import React from 'react'
 import './ExistingExercise.css'
+import {ListGroupItem} from 'react-bootstrap'
 
+const classNames = [, 'list-group-item']
 const ExistingExercise = props => {
 	return (
 		<div className='ExistingExercise'>
-			<li>Exercise Name: {props.name}</li>
+			<ListGroupItem>
+				<p>Exercise Name: <span className="badge">{props.name}</span></p>
 
-			<li>Sets: {props.sets}</li>
+				<p>Sets: <span className="badge">{props.sets}</span></p>
 
-			<li>Reps: {props.reps}</li>
+				<p>Reps: <span className="badge">{props.reps}</span></p>
 
-			<li>Weight: {props.weight}</li>
+				<p>Weight: <span className="badge">{props.weight}</span></p>
+			</ListGroupItem>
 		</div>
 	)
 }
