@@ -9,35 +9,40 @@ class App extends Component {
 	constructor() {
 		super()
 		this.state = {
-			Exercises: [],
-			NewWorkout: false
+			exercises: [],
+			newWorkout: false
 		}
 	}
 
 	startWorkoutHandler = () => {
 		let newState = {...this.state}
-		newState.NewWorkout = !this.state.NewWorkout
+		newState.newWorkout = !this.state.newWorkout
+		this.setState(newState)
+	}
+
+	addNewExerciseHandler = (exObj) => {
+		let newState = {...this.state}
+		newState.exercises = exObj
 		this.setState(newState)
 	}
 
 	render() {
-		let buttonMsgText = 'Start a new Workout!'
-		if (this.state.NewWorkout === true) {
-			buttonMsgText = 'Finish a new Workout'
+		let ShowNewExercise = null
+		if (this.state.newWorkout === true) {
+			ShowNewExercise = <NewExercise click={this.addNewExerciseHandler}/>
 		}
 
-		let ShowNewExercise = null
 		let ShowExistingExercises = null
-		if (this.state.NewWorkout === true) {
-			ShowExistingExercises = this.state.Exercises.map((ex) => <ExistingExercise name={ex.name} sets={ex.sets} reps={ex.reps} weight={ex.weight}/>)
-			ShowNewExercise = <NewExercise/>
+		let existingExercises = null
+		if (this.state.exercises.length !== 0) {
+			existingExercises = [...this.state.exercises]
+			ShowExistingExercises = existingExercises.map(ex => <ExistingExercise name={ex.name} sets={ex.sets} reps={ex.reps} weight={ex.weight}/>)
 		}
 
 		return (
 			<div className="App">
 				<NewWorkout
-					buttonMsg={buttonMsgText}
-					NewWorkout={this.state.NewWorkout}
+					newWorkout={this.state.newWorkout}
 					click={this.startWorkoutHandler}
 				/>
 				{ShowExistingExercises}
