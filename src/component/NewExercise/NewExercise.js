@@ -31,26 +31,18 @@ class NewExercise extends Component {
 	render () {
 		return (
 			<form className='NewExercise' onSubmit={event => {this.props.submit(event, this.state); this.clearState()}} >
-				<label>
-					Exercise Name:
-					<input placeholder='push ups' value={this.state.name} onChange={event => this.inputOnChangeHandler(event, 'name')}/>
-				</label>
-	
-				<label>
-					Sets:
+				<label>Exercise Name:</label>
+				<input placeholder='ex: push ups' value={this.state.name} onChange={event => this.inputOnChangeHandler(event, 'name')}/>
+				
+				<label>Sets:</label>
 					<input value={this.state.sets} onChange={event => this.inputOnChangeHandler(event, 'sets')}/>
-				</label>
-	
-				<label>
-					Reps:
+
+				<label>Reps:</label>
 					<input value={this.state.reps} onChange={event => this.inputOnChangeHandler(event, 'reps')}/>
-				</label>
 	
-				<label>
-					Weight:
-					<input placeholder='optional' value={this.state.weight} onChange={event => this.inputOnChangeHandler(event, 'weight')}/>
-				</label>
-	
+				<label>Weight:</label>
+				<input placeholder='(optional)' value={this.state.weight} onChange={event => this.inputOnChangeHandler(event, 'weight')}/>
+
 				<div className='btnGroup'>
 					<button
 						className='submitBtn'
