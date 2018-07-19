@@ -2,10 +2,10 @@ import React from 'react'
 import './ExistingExercise.css'
 import {ListGroupItem} from 'react-bootstrap'
 
-const classNames = [, 'list-group-item']
+const classNames = ['ExistingExercise', 'list-group-item']
 const ExistingExercise = props => {
 	return (
-		<div className='ExistingExercise'>
+		<div className={classNames}>
 			<ListGroupItem>
 				<p>Exercise Name: <span className="badge">{props.name}</span></p>
 
