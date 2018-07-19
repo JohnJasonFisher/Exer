@@ -1,18 +1,19 @@
 .NewExercise label {
 	padding: 10px;
 	margin: 10px;
+	font-size: 24px;
 }
 
 .NewExercise input {
 	padding: 10px;
 	margin: 10px;
-	font-size: 20px;
+	font-size: 24px;
 }
 
 .NewExercise .submitBtn {
-	height: 30px;
+	height: 35px;
 	width: 100px;
-	font-size: 18px;
+	font-size: 24px;
 	
 	/* background-color: #4CAF50;
 	color: white; */

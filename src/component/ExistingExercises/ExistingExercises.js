@@ -1,6 +1,8 @@
 import React from 'react'
 import {ListGroup} from 'react-bootstrap'
+import './ExistingExercises.css'
 import ExistingExercise from './ExistingExercise/ExistingExercise'
+import './ExistingExercise/ExistingExercise'
 
 const ExistingExercises = (props) => {
 
@@ -14,10 +16,12 @@ const ExistingExercises = (props) => {
 		)
 	}
 
+	let classNames = ['ExistingExercises']
+
 	return (
-	<ListGroup>
-		{ShowExistingExercises}
-	</ListGroup>
+		<ListGroup className={classNames}>
+			{ShowExistingExercises}
+		</ListGroup>
 	)
 }
 

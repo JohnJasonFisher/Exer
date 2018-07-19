@@ -1,3 +1,7 @@
+.list-group-item {
+	border: 0px;
+}
+
 .ExistingExercise p {
 	display: inline;
 	font-size: 24px;
