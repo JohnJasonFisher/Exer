@@ -11,6 +11,12 @@
 	padding: 20px;
 	margin: 0px;
 }
-.ExistingExercise span {
-	font-size: 24px;
+
+.ExistingExercise .close {
+	opacity: 1;
+	font-size: 30px;
+}
+
+.ExistingExercise .close span:hover {
+	color: red;
 }

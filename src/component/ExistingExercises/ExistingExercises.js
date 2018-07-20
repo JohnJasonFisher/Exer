@@ -12,6 +12,7 @@ const ExistingExercises = (props) => {
 			<ExistingExercise
 				key={'ex' + index}
 				{...ex}
+				click={props.click}
 			/>
 		)
 		return (

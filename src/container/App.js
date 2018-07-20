@@ -30,6 +30,15 @@ class App extends Component {
 		this.setState(newState)
 	}
 
+	deleteExsistingExerciseHandler = (id) => {
+		fetch(`http://localhost:3000/exercises/${id}`, {
+			method: 'DELETE',
+		})
+		let newState = {...this.state}
+		newState.exercises = newState.exercises.filter(ex => ex.id !== id)
+		this.setState(newState)
+	}
+
 	submitNewExerciseHandler = (event, Obj) => {
 		event.preventDefault()
 		fetch('http://localhost:3000/exercises', {
@@ -57,7 +66,7 @@ class App extends Component {
 					newWorkout={this.state.newWorkout}
 					click={this.startWorkoutHandler}
 				/>
-				<ExistingExercises exercises={this.state.exercises}/>
+				<ExistingExercises exercises={this.state.exercises} click={this.deleteExsistingExerciseHandler}/>
 				{ShowNewExercise}
 			</div>
 		)
