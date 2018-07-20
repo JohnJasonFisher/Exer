@@ -1,0 +1,18 @@
+{
+	"workouts": [
+		{
+			"id": 1,
+			"name": "Push ups",
+			"sets": 3,
+			"reps": 8,
+			"weight": null
+		},
+		{
+			"id": 2,
+			"name": "Pull ups",
+			"sets": 3,
+			"reps": 8,
+			"weight": 200
+		}
+	]
+}

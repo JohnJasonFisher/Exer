@@ -9,11 +9,20 @@ class App extends Component {
 	constructor() {
 		super()
 		this.state = {
-			exercises: [
-			],
+			exercises: [],
 			newWorkout: false
 		}
 	}
+
+	componentDidMount() {
+		fetch('http://localhost:3000/workouts')
+			.then(response => response.json())
+			.then(data => {
+				let newState = {...this.state}
+				newState.exercises = data
+				this.setState(newState)
+			})
+		}
 
 	startWorkoutHandler = () => {
 		let newState = {...this.state}
