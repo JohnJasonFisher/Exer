@@ -1,12 +1,14 @@
 .list-group-item {
 	border: 0px;
+	display: flex;
+	align-content: flex-end;
 }
 
 .ExistingExercise p {
 	display: inline;
 	font-size: 24px;
 	padding: 20px;
-	margin: 20px;
+	margin: 0px;
 }
 .ExistingExercise span {
 	font-size: 24px;

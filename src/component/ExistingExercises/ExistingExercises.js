@@ -16,10 +16,8 @@ const ExistingExercises = (props) => {
 		)
 	}
 
-	let classNames = ['ExistingExercises']
-
 	return (
-		<ListGroup className={classNames}>
+		<ListGroup className={['ExistingExercises']}>
 			{ShowExistingExercises}
 		</ListGroup>
 	)
