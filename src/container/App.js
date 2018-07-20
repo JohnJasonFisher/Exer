@@ -10,8 +10,6 @@ class App extends Component {
 		super()
 		this.state = {
 			exercises: [
-				{name: 'Push Ups', sets: 3, reps: 8, weight: null},
-				{name: 'Pull Ups', sets: 3, reps: 8, weight: 200}
 			],
 			newWorkout: false
 		}

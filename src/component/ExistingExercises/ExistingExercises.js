@@ -14,13 +14,16 @@ const ExistingExercises = (props) => {
 				{...ex}
 			/>
 		)
+		return (
+			<ListGroup className={['ExistingExercises']}>
+				{ShowExistingExercises}
+			</ListGroup>
+		)
+	} else {
+		return (null)
 	}
 
-	return (
-		<ListGroup className={['ExistingExercises']}>
-			{ShowExistingExercises}
-		</ListGroup>
-	)
+	
 }
 
 export default ExistingExercises
