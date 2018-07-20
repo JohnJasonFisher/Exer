@@ -15,14 +15,14 @@ class App extends Component {
 	}
 
 	componentDidMount() {
-		fetch('http://localhost:3000/workouts')
-			.then(response => response.json())
-			.then(data => {
-				let newState = {...this.state}
-				newState.exercises = data
-				this.setState(newState)
-			})
-		}
+		fetch('http://localhost:3000/exercises')
+		.then(response => response.json())
+		.then(data => {
+			let newState = {...this.state}
+			newState.exercises = data
+			this.setState(newState)
+		})
+	}
 
 	startWorkoutHandler = () => {
 		let newState = {...this.state}
@@ -32,9 +32,17 @@ class App extends Component {
 
 	submitNewExerciseHandler = (event, Obj) => {
 		event.preventDefault()
-		let newState = {...this.state}
-		newState.exercises.push(Obj)
-		this.setState(newState)
+		fetch('http://localhost:3000/exercises', {
+			method: 'POST',
+			headers: {
+				'Accept': 'application/json',
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({"id": this.state.exercises.length + 1, ...Obj})
+		})
+		let newState = {...this.state} 
+		newState.exercises.push(Obj) 
+		this.setState(newState) 
 	}
 
 	render() {
