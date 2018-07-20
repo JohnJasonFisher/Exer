@@ -1,0 +1,16 @@
+.list-group-item {
+	display: flex;
+	align-content: flex-end;
+	background: yellow;
+	border: 5px solid orange;
+}
+
+.ExistingExercise p {
+	display: inline;
+	font-size: 24px;
+	padding: 20px;
+	margin: 0px;
+}
+.ExistingExercise span {
+	font-size: 24px;
+}

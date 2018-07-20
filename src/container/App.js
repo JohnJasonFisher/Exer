@@ -1,16 +1,18 @@
 import React, { Component } from 'react'
 import './App.css'
 import NewWorkout from '../component/NewWorkout/NewWorkout'
-import NewExercise from '../component/NewExercise/NewExercise.js'
-import ExistingExercise from '../component/ExistingExercise/ExistingExercise.js'
-import {ListGroup} from 'react-bootstrap'
+import NewExercise from '../component/NewExercise/NewExercise'
+import ExistingExercises from '../component/ExistingExercises/ExistingExercises'
 
 class App extends Component {
 
 	constructor() {
 		super()
 		this.state = {
-			exercises: [],
+			exercises: [
+				{name: 'Push Ups', sets: 3, reps: 8, weight: null},
+				{name: 'Pull Ups', sets: 3, reps: 8, weight: 200}
+			],
 			newWorkout: false
 		}
 	}
@@ -34,25 +36,13 @@ class App extends Component {
 			ShowNewExercise = <NewExercise submit={this.submitNewExerciseHandler}/>
 		}
 
-		let ShowExistingExercises = null
-		if (this.state.exercises.length > 0) {
-			ShowExistingExercises = this.state.exercises.map((ex, index) =>
-				<ExistingExercise
-					key={'ee' + index}
-					{...ex}
-				/>
-			)
-		}
-
 		return (
 			<div className='App'>
 				<NewWorkout
 					newWorkout={this.state.newWorkout}
 					click={this.startWorkoutHandler}
 				/>
-				<ListGroup>
-					{ShowExistingExercises}
-				</ListGroup>
+				<ExistingExercises exercises={this.state.exercises}/>
 				{ShowNewExercise}
 			</div>
 		)
