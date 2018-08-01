@@ -12,15 +12,19 @@ const ExistingExercises = (props) => {
 			<ExistingExercise
 				key={'ex' + index}
 				{...ex}
+				click={props.click}
 			/>
 		)
+		return (
+			<ListGroup className={['ExistingExercises']}>
+				{ShowExistingExercises}
+			</ListGroup>
+		)
+	} else {
+		return (null)
 	}
 
-	return (
-		<ListGroup className={['ExistingExercises']}>
-			{ShowExistingExercises}
-		</ListGroup>
-	)
+	
 }
 
 export default ExistingExercises
