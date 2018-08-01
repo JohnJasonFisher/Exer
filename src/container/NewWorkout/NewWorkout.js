@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import './App.css'
-import NewWorkout from '../component/NewWorkout/NewWorkout'
-import NewExercise from '../component/NewExercise/NewExercise'
-import ExistingExercises from '../component/ExistingExercises/ExistingExercises'
+import './NewWorkout.css'
+import NewWorkoutBtn from '../../component/NewWorkoutBtn/NewWorkoutBtn'
+import NewExercise from '../../component/NewExercise/NewExercise'
+import ExistingExercises from '../../component/ExistingExercises/ExistingExercises'
 import Axios from 'axios'
 
-class App extends Component {
+class NewWorkout extends Component {
 
 	state = {
 		id: null,
@@ -52,8 +52,8 @@ class App extends Component {
 		}
 
 		return (
-			<div className='App'>
-				<NewWorkout
+			<div className='NewWorkout'>
+				<NewWorkoutBtn
 					newWorkout={this.state.newWorkout}
 					click={workoutHandler}
 				/>
@@ -64,4 +64,4 @@ class App extends Component {
 	}
 }
 
-export default App
+export default NewWorkout
