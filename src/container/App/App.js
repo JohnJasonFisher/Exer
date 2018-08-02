@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import './App.css'
+
 import NewWorkout from '../NewWorkout/NewWorkout'
 import PastWorkouts from '../PastWorkouts/PastWorkouts'
 

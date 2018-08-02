@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
-import './NewWorkout.css'
+import Axios from 'axios'
+
 import NewWorkoutBtn from '../../component/NewWorkoutBtn/NewWorkoutBtn'
 import NewExercise from '../../component/NewExercise/NewExercise'
 import ExistingExercises from '../../component/ExistingExercises/ExistingExercises'
-import Axios from 'axios'
+
 
 class NewWorkout extends Component {
 
@@ -56,16 +57,16 @@ class NewWorkout extends Component {
 
 		return (
 			<div className='NewWorkout'>
-				<NewWorkoutBtn
-					newWorkout={this.state.newWorkout}
-					click={workoutHandler}
-				/>
 				<ExistingExercises
 					exercises={this.state.exercises}
 					click={this.deleteExsistingExerciseHandler}
 					submitBtn={true}
 				/>
 				{ShowNewExercise}
+				<NewWorkoutBtn
+					newWorkout={this.state.newWorkout}
+					click={workoutHandler}
+				/>
 			</div>
 		)
 	}
