@@ -1,8 +1,6 @@
 .ExistingExercise .list-group-item {
 	display: flex;
 	align-content: flex-end;
-	background: yellow;
-	border: 5px solid orange;
 }
 
 .ExistingExercise p {

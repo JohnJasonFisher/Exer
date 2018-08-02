@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Axios from '../../../node_modules/axios'
 
-import PastWorkout from '../../component/PastWorkout/PastWorkout'
+import ExistingExercises from '../../component/ExistingExercises/ExistingExercises'
 import './PastWorkouts.css'
 
 class ExistingWorkouts extends Component {
@@ -20,7 +20,7 @@ class ExistingWorkouts extends Component {
 
 	render() {
 		let listOfWorkouts = this.state.workouts.map((workout, index) =>
-			<PastWorkout key={index} {...workout}/>
+			<ExistingExercises key={index} exercises={Object.values(workout.exercises)}/>
 		)
 		return(
 			<div className='ExistingWorkouts'>

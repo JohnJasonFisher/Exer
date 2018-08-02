@@ -54,7 +54,11 @@ class NewWorkout extends Component {
 					newWorkout={this.state.newWorkout}
 					click={workoutHandler}
 				/>
-				<ExistingExercises exercises={this.state.exercises} click={this.deleteExsistingExerciseHandler}/>
+				<ExistingExercises
+					exercises={this.state.exercises}
+					click={this.deleteExsistingExerciseHandler}
+					submitBtn={true}
+				/>
 				{ShowNewExercise}
 			</div>
 		)
