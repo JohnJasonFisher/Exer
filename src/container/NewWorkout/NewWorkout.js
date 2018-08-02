@@ -8,27 +8,26 @@ import Axios from 'axios'
 class NewWorkout extends Component {
 
 	state = {
-		id: null,
 		newWorkout: false,
+		date: null,
 		exercises: []
 	}
 
 	startWorkoutHandler = () => {
 		let newState = {...this.state}
-		let date = new Date(Date.now())
-		let exObj = {date: date.toJSON()}
-		Axios.post('https://excer-a8329.firebaseio.com/workouts.json', exObj)
-		.then(res => {
-			newState.newWorkout = true
-			newState.id = res.data.name
-			this.setState(newState)
-		})
+		newState.newWorkout = true
+		this.setState(newState)
 	}
 
 	finishWorkoutHandler = () => {
-		let newState = {
-			id: null,
+		let newState = {...this.state}
+		let exObj = {date: new Date(Date.now()).toJSON(), exercises: newState.exercises}
+		if (exObj.exercises.length > 0) {
+			Axios.post('https://excer-a8329.firebaseio.com/workouts.json', exObj)
+		}
+		newState = {
 			newWorkout: false,
+			date: null,
 			exercises: []
 		}
 		this.setState(newState)
@@ -36,8 +35,6 @@ class NewWorkout extends Component {
 
 	submitNewExerciseHandler = (event, Obj) => {
 		event.preventDefault()
-		Axios.post(`https://excer-a8329.firebaseio.com/workouts/${this.state.id}/exercises.json`, Obj)
-		.then(res => Obj.id = res.data.name)
 		let newState = {...this.state}
 		newState.exercises.push(Obj)
 		this.setState(newState)

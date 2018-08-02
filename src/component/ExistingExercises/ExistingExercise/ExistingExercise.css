@@ -12,6 +12,11 @@
 	margin: 0px;
 }
 
+.ExistingExercise p span {
+	font-size: 20px;
+	padding: 8px;
+}
+
 .ExistingExercise .close {
 	opacity: 1;
 	font-size: 30px;
