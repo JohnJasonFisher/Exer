@@ -13,6 +13,7 @@ const ExistingExercises = (props) => {
 				key={'ex' + index}
 				{...ex}
 				click={props.click}
+				submitBtn={true}
 			/>
 		)
 		return (

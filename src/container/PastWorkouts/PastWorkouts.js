@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import Axios from '../../../node_modules/axios'
 
 import PastWorkout from '../../component/PastWorkout/PastWorkout'
+import './PastWorkouts.css'
 
 class ExistingWorkouts extends Component {
 	state = {
