@@ -4,10 +4,8 @@ import {Panel, ListGroup} from 'react-bootstrap'
 import ExistingExercise from '../ExistingExercises/ExistingExercise/ExistingExercise'
 
 const PastWorkout = (props) => {
-	console.log(props)
-	let list = []
-	Object.keys(props.exercises).forEach(key =>
-		list.push(<ExistingExercise key={key} {...props.exercises[key]} submitBtn={false}/>)
+	 let list = Object.keys(props.exercises).map(key =>
+		<ExistingExercise key={key} {...props.exercises[key]} submitBtn={false}/>
 	)
 	return (
 		<div className='PastWorkout' style={{display: 'flex', justifyContent: 'center'}}>
