@@ -40,6 +40,12 @@ class NewWorkout extends Component {
 		this.setState(newState)
 	}
 
+	deleteExsistingExerciseHandler = (id) => {
+		let newState = {...this.state}
+		newState.exercises.splice(id, 1)
+		this.setState(newState)
+	}
+
 	render() {
 		let ShowNewExercise = null
 		let workoutHandler = this.startWorkoutHandler
