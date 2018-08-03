@@ -1,16 +1,13 @@
 language: node_js
 node_js:
   - 10.6.0
-cache:
-  directories:
-  - node_modules
-before_install:
+script:
+  - echo "Deploying for you John, make good choices!"
+install:
   - npm install -g firebase-tools
-# script:
-#   - npm test
 after_success:
   - npm run build
-  - firebase deploy -m "excir" --non-interactive --token $FIREBASE_TOKEN
+  - firebase deploy --token $FIREBASE_TOKEN
 branches:
   only:
     - master
