@@ -10,7 +10,7 @@ before_install:
 #   - npm test
 after_success:
   - npm run build
-  - firebase deploy -m "Travis deploy" --non-interactive --token $FIREBASE_TOKEN
+  - firebase deploy -m "excir" --non-interactive --token $FIREBASE_TOKEN
 branches:
   only:
     - master
