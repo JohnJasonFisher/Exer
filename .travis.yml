@@ -3,7 +3,7 @@ node_js:
   - 10.6.0
 install:
   - npm install -g firebase-tools
-  - npm install -g react-scripts
+  - npm install -g create-react-app
 script:
   - echo "Deploying for you John, make good choices!"
   - npm run build
