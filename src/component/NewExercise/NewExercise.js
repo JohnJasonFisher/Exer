@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import './NewExercise.css'
+import * as RB from 'react-bootstrap'
 
 class NewExercise extends Component {
 
@@ -43,14 +44,15 @@ class NewExercise extends Component {
 				<label>Weight:</label>
 				<input placeholder='(optional)' value={this.state.weight} onChange={event => this.inputOnChangeHandler(event, 'weight')}/>
 
-				<div className='btnGroup'>
-					<button
+				<RB.ButtonToolbar>
+					<RB.Button
+						bsStyle="primary"
 						className='submitBtn'
 						type='submit'
 					>
 						Submit!
-					</button>
-				</div>
+					</RB.Button>
+				</RB.ButtonToolbar>
 			</form>
 		)
 	}
