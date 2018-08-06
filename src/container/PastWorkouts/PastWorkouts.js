@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Axios from '../../../node_modules/axios'
+import Moment from 'moment'
 
 import ExistingExercises from '../../component/ExistingExercises/ExistingExercises'
 import './PastWorkouts.css'
@@ -19,9 +20,12 @@ class ExistingWorkouts extends Component {
 	}
 
 	render() {
-		let listOfWorkouts = this.state.workouts.map((workout, index) =>
-			<ExistingExercises key={index} exercises={Object.values(workout.exercises)}/>
-		)
+		let listOfWorkouts = this.state.workouts.map((workout, index) => (
+			<React.Fragment key={'frag' + index}>
+				<h4 key={workout.date}>{Moment(workout.date).format('MMMM Do YYYY')}</h4>
+				<ExistingExercises key={index} exercises={Object.values(workout.exercises)}/>
+			</React.Fragment>
+		))
 		return(
 			<div className='ExistingWorkouts'>
 				{listOfWorkouts}
