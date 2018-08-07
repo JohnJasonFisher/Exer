@@ -3,11 +3,16 @@
 	align-content: flex-end;
 }
 
+.ExistingExercise {
+	min-width: 0px;
+}
+
 .ExistingExercise p {
 	display: inline;
 	font-size: 24px;
 	padding: 20px;
 	margin: 0px;
+	min-width: 0px;
 }
 
 .ExistingExercise p span {

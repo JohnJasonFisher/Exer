@@ -1,8 +1,10 @@
 import React from 'react'
-import {ListGroup} from 'react-bootstrap'
+import {ListGroup, Panel} from 'react-bootstrap'
+import Moment from 'moment'
+
 import './ExistingExercises.css'
-import ExistingExercise from './ExistingExercise/ExistingExercise'
 import './ExistingExercise/ExistingExercise'
+import ExistingExercise from './ExistingExercise/ExistingExercise'
 
 const ExistingExercises = props => {
 
@@ -18,8 +20,15 @@ const ExistingExercises = props => {
 			/>
 		)
 		return (
-			<ListGroup className={['ExistingExercises']}>
-				{ShowExistingExercises}
+			<ListGroup className='ExistingExercises'>
+				<Panel>
+					<Panel.Heading>
+						<Panel.Title toggle>{Moment(props.date).format('MMMM Do YYYY')}</Panel.Title>
+					</Panel.Heading>
+						<Panel.Body collapsible>
+							{ShowExistingExercises}
+						</Panel.Body>
+				</Panel>
 			</ListGroup>
 		)
 	} else {

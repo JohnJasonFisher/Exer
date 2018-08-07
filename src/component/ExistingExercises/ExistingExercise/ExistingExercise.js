@@ -1,6 +1,6 @@
 import React from 'react'
 import './ExistingExercise.css'
-import {ListGroupItem, Panel} from 'react-bootstrap'
+import {Panel} from 'react-bootstrap'
 
 const ExistingExercise = props => {
 
@@ -11,7 +11,7 @@ const ExistingExercise = props => {
 	)
 
 	return (
-		<ListGroupItem className='ExistingExercise'>
+		<div className='ExistingExercise'>
 			<Panel>
 				<Panel.Heading>
 					<p>Exercise Name: {props.name}</p>
@@ -25,9 +25,7 @@ const ExistingExercise = props => {
 					<p>Weight: <span className='badge'>{props.weight}</span></p>
 				</Panel.Body>
 			</Panel>
-			
-
-		</ListGroupItem>
+		</div>
 	)
 }
 

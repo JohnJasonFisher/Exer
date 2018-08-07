@@ -20,7 +20,7 @@ class ExistingWorkouts extends Component {
 
 	render() {
 		let listOfWorkouts = this.state.workouts.map((workout, index) =>
-			<ExistingExercises key={index} exercises={Object.values(workout.exercises)}/>
+			<ExistingExercises key={index} exercises={Object.values(workout.exercises)} date={workout.date}/>
 		)
 		return(
 			<div className='ExistingWorkouts'>
