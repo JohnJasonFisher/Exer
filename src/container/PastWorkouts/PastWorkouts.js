@@ -13,8 +13,8 @@ class ExistingWorkouts extends Component {
 		let newState = {...this.state}
 		Axios.get('https://excer-a8329.firebaseio.com/workouts.json')
 		.then(res => {
-			Object.keys(res.data).forEach(key => newState.workouts.push(res.data[key]))
-			this.setState(newState)
+				Object.keys(res.data).forEach(key => newState.workouts.push(res.data[key]))
+				this.setState(newState)
 		})
 	}
 
