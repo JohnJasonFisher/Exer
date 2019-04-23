@@ -4,14 +4,11 @@ import * as RB from 'react-bootstrap'
 
 class NewExercise extends Component {
 
-	constructor() {
-		super()
-		this.state = {
+	state = {
 			name: '',
 			reps: '',
 			sets: '',
 			weight: ''
-		}
 	}
 
 	inputOnChangeHandler(event, attr) {
@@ -33,7 +30,11 @@ class NewExercise extends Component {
 		return (
 			<form className='NewExercise' onSubmit={event => {this.props.submit(event, this.state); this.clearState()}} >
 				<label>Exercise Name:</label>
-				<input placeholder='ex: push ups' value={this.state.name} onChange={event => this.inputOnChangeHandler(event, 'name')}/>
+				<input
+					placeholder='ex: push ups'
+					value={this.state.name}
+					onChange={event => this.inputOnChangeHandler(event, 'name')}
+				/>
 				
 				<label>Sets:</label>
 					<input value={this.state.sets} onChange={event => this.inputOnChangeHandler(event, 'sets')}/>
