@@ -35,7 +35,6 @@ class NewWorkout extends Component {
 			const fetchedExercises = res.data
 			exercises.forEach(ex => {
 				if (!fetchedExercises.includes(ex)) {
-					console.log(ex)
 					fetchedExercises.push(ex)
 				}
 			})
