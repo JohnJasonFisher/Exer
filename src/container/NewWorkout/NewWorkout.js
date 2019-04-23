@@ -11,7 +11,8 @@ class NewWorkout extends Component {
 	state = {
 		newWorkout: false,
 		date: null,
-		exercises: []
+		exercises: [],
+		fetchedExercises: []
 	}
 
 	startWorkoutHandler = () => {
@@ -21,17 +22,31 @@ class NewWorkout extends Component {
 	}
 
 	finishWorkoutHandler = () => {
-		let newState = {...this.state}
-		let exObj = {date: new Date(Date.now()).toJSON(), exercises: newState.exercises}
-		if (exObj.exercises.length > 0) {
-			Axios.post('https://excer-a8329.firebaseio.com/workouts.json', exObj)
+		const newState = {...this.state}
+		const workouts = {date: new Date(Date.now()).toJSON(), exercises: newState.exercises}
+		const exercises = newState.exercises.map(ex => ex.name)
+
+		if (workouts.exercises.length > 0) {
+			Axios.post('https://excer-a8329.firebaseio.com/workouts.json', workouts)
 		}
-		newState = {
+
+		Axios.get('https://excer-a8329.firebaseio.com/pastExercises.json')
+		.then(res => {
+			const fetchedExercises = res.data
+			exercises.forEach(ex => {
+				if (!fetchedExercises.includes(ex)) {
+					console.log(ex)
+					fetchedExercises.push(ex)
+				}
+			})
+			Axios.put('https://excer-a8329.firebaseio.com/pastExercises.json', fetchedExercises)
+		})
+
+		this.setState({
 			newWorkout: false,
 			date: null,
 			exercises: []
-		}
-		this.setState(newState)
+		})
 	}
 
 	submitNewExerciseHandler = (event, Obj) => {
