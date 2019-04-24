@@ -1,6 +1,7 @@
 import React from 'react'
-import './ExistingExercise.css'
 import {Panel} from 'react-bootstrap'
+
+import './ExistingExercise.css'
 
 const ExistingExercise = props => {
 

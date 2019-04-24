@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Axios from '../../../node_modules/axios'
 
-import ExistingExercises from '../../component/ExistingExercises/ExistingExercises'
+import ExistingExercises from 'components/ExistingExercises/ExistingExercises'
 import './PastWorkouts.css'
 
 class ExistingWorkouts extends Component {
