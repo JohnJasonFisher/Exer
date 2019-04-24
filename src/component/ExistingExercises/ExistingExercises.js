@@ -21,7 +21,7 @@ const ExistingExercises = props => {
 		)
 		return (
 			<ListGroup className='ExistingExercises'>
-				<Panel>
+				<Panel expanded={props.expanded}>
 					<Panel.Heading>
 						<Panel.Title toggle>{Moment(props.date).format('MMMM Do YYYY')}</Panel.Title>
 					</Panel.Heading>
