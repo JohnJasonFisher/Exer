@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
-import './NewExercise.css'
 import * as RB from 'react-bootstrap'
+
+import './NewExercise.css'
 
 class NewExercise extends Component {
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import Axios from 'axios'
 
-import NewWorkoutBtn from '../../component/NewWorkoutBtn/NewWorkoutBtn'
-import NewExercise from '../../component/NewExercise/NewExercise'
-import ExistingExercises from '../../component/ExistingExercises/ExistingExercises'
+import NewWorkoutBtn from 'components/NewWorkoutBtn/NewWorkoutBtn'
+import NewExercise from 'components/NewExercise/NewExercise'
+import ExistingExercises from 'components/ExistingExercises/ExistingExercises'
 
 
 class NewWorkout extends Component {
@@ -62,24 +62,25 @@ class NewWorkout extends Component {
 	}
 
 	render() {
-		let ShowNewExercise = null
+		let NewExerciseComp = null
 		let workoutHandler = this.startWorkoutHandler
 		if (this.state.newWorkout === true) {
-			ShowNewExercise = <NewExercise submit={this.submitNewExerciseHandler}/>
+			NewExerciseComp = <NewExercise submit={this.submitNewExerciseHandler}/>
 			workoutHandler = this.finishWorkoutHandler
 		}
 
 		return (
 			<div className='NewWorkout'>
+				{NewExerciseComp}
+				<NewWorkoutBtn
+					newWorkout={this.state.newWorkout}
+					click={workoutHandler}
+				/>
 				<ExistingExercises
 					exercises={this.state.exercises}
 					click={this.deleteExsistingExerciseHandler}
 					submitBtn={true}
-				/>
-				{ShowNewExercise}
-				<NewWorkoutBtn
-					newWorkout={this.state.newWorkout}
-					click={workoutHandler}
+					expanded={true}
 				/>
 			</div>
 		)
