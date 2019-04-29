@@ -1,10 +1,9 @@
 import React, {Component} from 'react'
 
-import NewWorkout from '../NewWorkout/NewWorkout'
-import PastWorkouts from '../PastWorkouts/PastWorkouts'
+import NewWorkout from 'components/NewWorkout/NewWorkout'
+import PastWorkouts from 'components/PastWorkouts/PastWorkouts'
 
 class App extends Component {
-	state = {}
 	render() {
 		return(
 			<div className='App'>
