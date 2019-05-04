@@ -1,3 +1,7 @@
+---
+permalink: /index.html
+---
+
 This is a react app that is meant to track my exercises.
 
 To start the app in develop mode, just run 'npm start'
