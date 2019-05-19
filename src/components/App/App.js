@@ -1,14 +1,17 @@
 import React, {Component} from 'react'
+import {Switch, Route} from 'react-router-dom'
 
-import NewWorkout from 'components/NewWorkout/NewWorkout'
-import PastWorkouts from 'components/PastWorkouts/PastWorkouts'
+import Home from '../Home/Home'
+import FiveByFive from '../FiveByFive/FiveByFive'
 
 class App extends Component {
 	render() {
 		return(
 			<div className='App'>
-				<NewWorkout/>
-				<PastWorkouts/>
+				<Switch>
+				<Route exact path='/' component={Home}/>
+				<Route path='/w' component={FiveByFive}/>
+				</Switch>
 			</div>
 		)
 	}
